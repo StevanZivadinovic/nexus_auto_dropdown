@@ -8,7 +8,7 @@ export function useVehicleDropdown() {
 
   const fetchYears = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/api/years');
+      const response = await axios.get('/api/years');
       years.value =response.data.years;
     } catch (error) {
       console.error('Error fetching years:', error);

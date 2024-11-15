@@ -25,7 +25,7 @@ watch(
     } else {
       isYearsLoaded.value = false; 
     }
-    if (newValue.length > 0) {
+    if (newValue?.length > 0) {
       selectedYear.value = newValue[0].year;
     }
   },

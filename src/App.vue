@@ -5,6 +5,7 @@
 </template>
 
 <script setup lang="ts">
+//@ts-ignore   
 import VehicleSelection from './components/VehicleSelection.vue';
 </script>
 

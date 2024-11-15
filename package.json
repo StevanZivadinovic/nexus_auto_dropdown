@@ -17,12 +17,12 @@
   },
   "devDependencies": {
     "@types/node": "^22.9.0",
-    "@vitejs/plugin-vue": "^5.1.4",
+    "@vitejs/plugin-vue": "^5.2.0",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.14",
     "typescript": "~5.6.2",
-    "vite": "^5.4.10",
+    "vite": "^5.4.11",
     "vue-tsc": "^2.1.8"
   },
   "description": "This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.",
