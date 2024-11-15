@@ -2,18 +2,7 @@
 import useVehicleDropdown from './../api/dropdownApi'
 const { years, makes, models, fetchYears, fetchMakes, fetchModels } = useVehicleDropdown();
 import { ref, watch, onMounted } from "vue";
-
-interface Year {
-  year: string;
-}
-
-interface Make {
-  make: string;
-}
-
-interface Model {
-  model: string;
-}
+import { Make, Model, Year } from '../types/global';
 
 const selectedYear = ref<string | null>(null);
 const selectedMake = ref<string | null>(null);

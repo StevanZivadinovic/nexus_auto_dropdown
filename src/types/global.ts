@@ -15,3 +15,15 @@ export interface modelType {
     vehicle_type:string;
     year:number;
   }
+
+  export interface Year {
+    year: string;
+  }
+  
+  export interface Make {
+    make: string;
+  }
+  
+  export interface Model {
+    model: string;
+  }
