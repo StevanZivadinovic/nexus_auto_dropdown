@@ -1,7 +1,7 @@
 import { ref } from 'vue';
 import axios from 'axios';
 
-export function useVehicleDropdown() {
+export default function useVehicleDropdown() {
   const years = ref<any[]>([]);
   const makes = ref<any[]>([]);
   const models = ref<any[]>([]);
