@@ -14,6 +14,12 @@ app.use(cors({
   methods: ['GET', 'POST'], 
   allowedHeaders: ['Content-Type', 'Accept'], 
 }));
+// Serve static files (frontend)
+const __dirname = path.resolve();
+app.use(express.static(path.join(__dirname, 'dist')));
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+});
 
 // API endpoints
 app.get('/api/years', async (req, res) => {
