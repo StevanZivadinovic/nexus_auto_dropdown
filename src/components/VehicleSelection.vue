@@ -3,7 +3,18 @@ import { useVehicleDropdown } from "./../Api/dropdownApi";
 const { years, makes, models, fetchYears, fetchMakes, fetchModels } = useVehicleDropdown();
 import { ref, watch, onMounted } from "vue";
 
-// Reactive references
+interface Year {
+  year: string;
+}
+
+interface Make {
+  make: string;
+}
+
+interface Model {
+  model: string;
+}
+
 const selectedYear = ref<string | null>(null);
 const selectedMake = ref<string | null>(null);
 const selectedModel = ref<string | null>(null);
@@ -12,9 +23,9 @@ const isYearsLoaded = ref(false);
 const isMakesLoaded = ref(false);
 const isModelsLoaded = ref(false);
 
-const yearsData = ref([]);
-const makesData = ref([]);
-const modelsData = ref([]);
+const yearsData = ref<Year[]>([]);
+const makesData = ref<Make[]>([]);
+const modelsData = ref<Model[]>([]);
 
 watch(
   () => years.value, 
