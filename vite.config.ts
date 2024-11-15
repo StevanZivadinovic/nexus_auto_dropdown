@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [vue()],
   server: {
     proxy: {
-      '/api': 'http://localhost:3000',
+      '/api': 'https://nexus-auto-dropdown-yay3.vercel.app',
     },
   },
   resolve: {
