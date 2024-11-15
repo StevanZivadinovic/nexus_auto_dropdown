@@ -8,7 +8,8 @@ import cors from 'cors';
 const app = express();
 const token = '5cbe12fb62f4941267d623499a2a4fd5948fd3ef';
 const apiBaseUrl = 'https://rateengine.ship.cars/v2/vehicles';
-
+//https://rateengine.ship.cars/v2/vehicles/years/?token=5cbe12fb62f4941267d623499a2a4fd5948fd3ef
+//https://rateengine.ship.cars/v2/vehicles/makes/?year={year}&token=5cbe12fb62f4941267d623499a2a4fd5948fd3ef
 app.use(cors({
   origin: ['https://nexus-auto-dropdown-yay3.vercel.app','http://localhost:5173'], 
   methods: ['GET', 'POST'], 
@@ -19,7 +20,7 @@ app.use(cors({
 app.get('/api/years', async (req, res) => {
   console.log(req?.baseUrl)
   try {
-    const response = await axios.get(`${apiBaseUrl}/years/?token=${token}`, {
+    const response = await axios.get(`${apiBaseUrl}/years/?format=json&token=${token}`, {
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
@@ -39,7 +40,7 @@ app.get('/api/makes', async (req, res) => {
   }
 
   try {
-    const response = await axios.get(`${apiBaseUrl}/makes/?year=${year}&token=${token}`, {
+    const response = await axios.get(`${apiBaseUrl}/makes/?year=${year}&format=json&token=${token}`, {
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',

@@ -75,7 +75,9 @@ const onMakeChange = async () => {
 // Fetch years when component is mounted
 onMounted(async () => {
   await fetchYears();
+  console.log(years.value)
 });
+
 </script>
 
 <template>
@@ -97,6 +99,7 @@ onMounted(async () => {
         </option>
       </select>
     </div>
+
 
     <!-- Make Dropdown -->
     <div v-if="makesData.length > 0" class="space-y-4">
