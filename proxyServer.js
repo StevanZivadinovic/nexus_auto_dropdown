@@ -10,7 +10,7 @@ const token = '5cbe12fb62f4941267d623499a2a4fd5948fd3ef';
 const apiBaseUrl = 'https://rateengine.ship.cars/v2/vehicles';
 
 app.use(cors({
-  origin: ['https://nexus-auto-dropdown-yay3.vercel.app'], 
+  origin: ['https://nexus-auto-dropdown-yay3.vercel.app','http://localhost:5173'], 
   methods: ['GET', 'POST'], 
   allowedHeaders: ['Content-Type', 'Accept'], 
 }));
