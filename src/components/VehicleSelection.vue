@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import useVehicleDropdown from './../api/dropdownApi'
+import useVehicleDropdown from '../Api/dropdownApi'
 const { years, makes, models, fetchYears, fetchMakes, fetchModels } = useVehicleDropdown();
 import { ref, watch, onMounted } from "vue";
 import { Make, Model, Year } from '../types/global';
