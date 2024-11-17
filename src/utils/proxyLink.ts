@@ -1,3 +1,3 @@
 export function getProxyLink(url:string){
-    return `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`
+    return `https://corsproxy.io/?${encodeURIComponent(url)}`
   }

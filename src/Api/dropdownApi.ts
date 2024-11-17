@@ -14,7 +14,7 @@ export default function useVehicleDropdown() {
         "https://rateengine.ship.cars/v2/vehicles/years/?format=json&token=5cbe12fb62f4941267d623499a2a4fd5948fd3ef"
       );
       const response = await axios.get(link);
-      years.value = JSON.parse(response.data.contents);
+      years.value = response.data;
     } catch (error) {
       console.error("Error fetching years:", error);
     }
@@ -25,7 +25,7 @@ export default function useVehicleDropdown() {
     try {
       const url = getProxyLink(`https://rateengine.ship.cars/v2/vehicles/makes/?year=${selectedYear}&format=json&token=5cbe12fb62f4941267d623499a2a4fd5948fd3ef`)
       const response = await axios.get(url);
-      makes.value = JSON.parse(response.data.contents);
+      makes.value = response.data;
     } catch (error) {
       console.error("Error fetching makes:", error);
     }
@@ -37,11 +37,9 @@ export default function useVehicleDropdown() {
   ) => {
     if (!selectedYear || !selectedMake) return;
     try {
-      const response = await axios.get(
-        `http://localhost:3000/api/models?year=${selectedYear}&make=${selectedMake}`
-      );
-      models.value = response.data.models;
-      console.log(response.data.models);
+      const url = getProxyLink( `https://rateengine.ship.cars/v2/vehicles/models/?year=${selectedYear}&make=${selectedMake}&format=json&token=5cbe12fb62f4941267d623499a2a4fd5948fd3ef`)
+      const response = await axios.get(url);
+      models.value = response.data;
     } catch (error) {
       console.error("Error fetching models:", error);
     }

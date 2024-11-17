@@ -45,7 +45,7 @@ watch(
   { immediate: true }
 );
 
-// Watch for changes in `models`
+
 watch(
   () => models.value,
   (newModels) => {
@@ -59,32 +59,31 @@ watch(
   { immediate: true }
 );
 
-// Year change handler
+
 const onYearChange = async () => {
   makes.value = [];
   models.value = [];
   await fetchMakes(selectedYear.value);
 };
 
-// Make change handler
+
 const onMakeChange = async () => {
   models.value = [];
   await fetchModels(selectedYear.value, selectedMake.value);
 };
 
-// Fetch years when component is mounted
+
 onMounted(async () => {
   await fetchYears();
-  console.log(years.value)
 });
 
 </script>
 
 <template>
-  <div class="max-w-lg mx-auto p-6 space-y-6 bg-gradient-to-r from-indigo-100 to-purple-100 shadow-xl rounded-lg">
+  <div class="w-[80%] mx-auto p-6 space-y-6 bg-gradient-to-r from-indigo-100 to-purple-100 shadow-xl rounded-lg">
     <h1 class="text-4xl font-semibold text-center text-gray-800">Select Vehicle Details</h1>
 
-    <!-- Year Dropdown -->
+
     <div v-if="yearsData.length > 0" class="space-y-4">
       <label for="year" class="block text-lg font-medium text-gray-700">Select Year</label>
       <select
@@ -101,7 +100,7 @@ onMounted(async () => {
     </div>
 
 
-    <!-- Make Dropdown -->
+
     <div v-if="makesData.length > 0" class="space-y-4">
       <label for="make" class="block text-lg font-medium text-gray-700">Select Make</label>
       <select
@@ -117,7 +116,7 @@ onMounted(async () => {
       </select>
     </div>
 
-    <!-- Model Dropdown -->
+
     <div v-if="modelsData.length > 0" class="space-y-4">
       <label for="model" class="block text-lg font-medium text-gray-700">Select Model</label>
       <select
